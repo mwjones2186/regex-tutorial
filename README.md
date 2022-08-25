@@ -40,7 +40,9 @@ All regex coding utilizes all of the same componants. There most contain a start
 
 Then depending on how we plan to use our regex code, we will add in an assortment of additional componants in order to sort, confirm or find what we are looking to accomplish. Below are the key componants of what makes up a regex code block and a description of what each charecter type is used for and how it responds. 
 
-### Anchors
+
+
+## Anchors
 
 Anchors are starting and ending points of our code. Typically a '^' is used to inidicate the beginning of a string and a '$' is used to end our string. 
 
@@ -51,7 +53,9 @@ $ =	End of string, or end of line
 Example Expression:	xyz$	
 Example Results: xyz (appearing at end of string or line)
 
-### Quantifiers
+
+
+## Quantifiers
 
 Quantifiers allow you to declare a certain quantity of a particular charecter. 
 
@@ -72,7 +76,8 @@ Example Expression: A\{3,\}
 Example Results: AAA,AAAAAAAAA,AAAAAAAAAAAA but not AA or A.
 
 
-### OR Operator
+
+## OR Operator
 
 The OR operator is a way to match charecters on the right to the left. 
 
@@ -80,7 +85,9 @@ The OR operator is a way to match charecters on the right to the left.
 Example Expression: (t|T)
 Example Results: Will match either 't' or 'T' from the input string. 
 
-### Character Classes
+
+
+## Character Classes
 
 Charecter classes is a way to search for text utilizing thier classification. It uses fundamental word charecters such as numbers and letters AND non-word charecters such as spaces and puctuation. 
 
@@ -102,7 +109,9 @@ Example Results: well-wishes, far-fetched
 Example Expression:	\w\W\{1,\}\w
 Example Results: a,!-(?&;b, 9-5
 
-### Flags
+
+
+## Flags
 
 A flag is an optional parameter to a regex that modifies its behavior. 
 
@@ -119,13 +128,16 @@ y =	Sticky	Makes the expression start its searching from the index indicated in 
 u =	Unicode	Makes the expression assume individual characters as code points, not code units, and thus match 32-bit characters as well.
 
 
-### Grouping and Capturing
+
+## Grouping and Capturing
 
 Capturing and grouping is a way to treat multiple charecters as a single unit. They are created by placing the characters to be grouped inside a set of parentheses.
 
 For example, the regular expression (dog) creates a single group containing the letters "d" "o" and "g". The portion of the input string that matches the capturing group will be saved in memory for later recall via backreferences
 
-### Bracket Expressions
+
+
+## Bracket Expressions
 
 Bracket expressions aka ranges are a way to sort or search for any series of charecters or a certain number of integers. 
 
@@ -149,7 +161,9 @@ Ranges can also be combined by concatenating. For instance:	[f-hAC-E3-5]	Matches
 
 Ranges can also be modified with a quantifier. For instance:	[a-c0-2]*	Matches zero or more consecutive occurrences of a, b, c, 0, 1, 2. For example, ac1cb would match
 
-### Greedy and Lazy Match
+
+
+## Greedy and Lazy Match
 
 'Greedy' means match longest possible string.
 
@@ -159,7 +173,9 @@ For example, the greedy h.+l matches 'hell' in 'hello' but the lazy h.+?l matche
 
 Lazy will stop as soon as the condition l is satisfied, but greedy means it will stop only once the condition l is not satisfied any more
 
-### Boundaries
+
+
+## Boundaries
 
 Boundries are expressions that specifically searches a certain series of letters or string. It is limited to the begining or end of a word. 
 
@@ -179,24 +195,26 @@ Example Resutls:  It would locate any word starting with 'what' i.e what-ever.
 Example Expresion: \>hold
 Example Results: It would find be-hold. 
 
-### Back-references
+
+
+## Back-references
 
 A backreference is specified in the regular expression as a backslash (\) followed by a digit indicating the number of the group to be recalled. For example, the expression (\d\d) defines one capturing group matching two digits in a row, which can be recalled later in the expression via the backreference \1.
 
 To match any 2 digits, followed by the exact same two digits, you would use (\d\d)\1 as the regular expression:
 
- 
 Enter your regex: (\d\d)\1
 Enter input string to search: 1212
 I found the text "1212" starting at index 0 and ending at index 4.
 If you change the last two digits the match will fail:
-
  
 Enter your regex: (\d\d)\1
 Enter input string to search: 1234
 No match found.
 
-### Look-ahead and Look-behind
+
+
+## Look-ahead and Look-behind
 
 Lookahead and lookbehind, collectively called “lookaround”, are zero-length assertions just like the start and end of line, and start and end of word. The difference is that lookaround actually matches characters, but then gives up the match, returning only the result: match or no match. That is why they are called “assertions”. They do not consume characters in the string, but only assert whether a match is possible or not. Lookaround allows you to create regular expressions that are impossible to create without them, or that would get very longwinded without them.
 
