@@ -1,10 +1,10 @@
-Regex- Tutorial
+# Regex- Tutorial
 
 What is regex? Regex stands for regular expression. It is a sequence of charecters that specifies a search pattern in text. It can search for a specific string, integer, match etc. It can be used to locate and manage text. 
 
 ## Summary
 
-^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$
+^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$
 
 This is a regex expression to check a password meets a certain criteria. This code can be broken down to the following:
 
